@@ -7,6 +7,8 @@ services:
       db:
         condition: service_healthy
     restart: unless-stopped
+    volumes:
+      - ./WebContent/Config.properties:/usr/local/tomcat/ROOT/Config.properties
 
   db:
     image: mysql:5.7
